@@ -1,12 +1,11 @@
 import requests
 import json
-import urllib
-import urllib2
 
 """
     To get the access token goto http://graph.facebook.com/tools/explorer
     With "Get Access Token" option select "user_group" and "Friend_group" in "User Data Permissions" and "Friends Data Permissions"
 """
+
 TOKEN = '<access_token'
 
 #Collects all group names and group id from the user which he belongs to
@@ -27,9 +26,8 @@ def Post_status(name):
         if check=='N':
             continue
         post_data = {'access_token':TOKEN, 'message':message}
-        request_path = str(i['gid'])+'/feed'
-        post_data = urllib.urlencode(post_data)
-        response = urllib2.urlopen('https://graph.facebook.com/%s' % request_path, post_data)
+        url='https://graph.facebook.com/%s/feed' % str(i['gid'])
+        response = requests.post(url,data=post_data)
         
 if __name__ == '__main__':
     Post_status(get_groups())
