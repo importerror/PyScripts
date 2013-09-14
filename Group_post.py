@@ -21,12 +21,16 @@ def get_groups():
 
 #Post feeds to all the groups
 def Post_status(name):
+    message=raw_input("Enter your message to be posted:")
     for i in name:
-        post_data = {'access_token':TOKEN, 'message':'<content>'}
+        check=raw_input("Want to post in %s?(Y/N)" % i['name'])
+        if check=='N':
+            continue
+        post_data = {'access_token':TOKEN, 'message':message}
         request_path = str(i['gid'])+'/feed'
         post_data = urllib.urlencode(post_data)
         response = urllib2.urlopen('https://graph.facebook.com/%s' % request_path, post_data)
-
+        
 if __name__ == '__main__':
     Post_status(get_groups())
     
