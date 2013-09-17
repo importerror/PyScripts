@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 
 """
     To get the access token goto http://graph.facebook.com/tools/explorer
@@ -21,7 +22,8 @@ def Post_status(name):
     message=raw_input("Enter your message to be posted:")
     for i in name:
         try:
-            check=raw_input("Want to post in %s?(Y/N)" % i['name'])
+            prompt = u"Want to post in %s?(Y/N) " % i['name']
+            check = raw_input(prompt.encode(sys.stdout.encoding))
         except UnicodeError:
             continue
         if check=='N':
