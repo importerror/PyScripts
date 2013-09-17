@@ -6,7 +6,7 @@ import sys
     To get the access token goto http://graph.facebook.com/tools/explorer
     With "Get Access Token" option select "user_group" and "Friend_group" in "User Data Permissions" and "Friends Data Permissions"
 """
-TOKEN = '' 
+TOKEN = '<access token>' 
 
 #Collects all group names and group id from the user which he belongs to
 def get_groups():
