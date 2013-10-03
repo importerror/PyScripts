@@ -26,7 +26,7 @@ def Post_status(name):
             check = raw_input(prompt.encode(sys.stdout.encoding))
         except UnicodeError:
             continue
-        if check=='N':
+        if ((check=='N')|(check=='n')):
             continue
         post_data = {'access_token':TOKEN, 'message':message}
         url='https://graph.facebook.com/%s/feed' % str(i['gid'])
