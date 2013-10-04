@@ -6,6 +6,7 @@ Playing around with Graph API using python
 This script is used to update selected Facebook groups of the user with any specific message. We use Graph API provided by Facebook for the same.
 To use the Graph API, it is necessary for the user to generate an Access Token. 
 
+
 The script depends on the following packages:
 
 1) requests module. Do check this page for installing requests module (http://docs.python-requests.org/en/latest/user/install/)
@@ -26,6 +27,7 @@ select "Friends_groups".
 6) Click "Get Access Token".
 
 7) In The Access Token Edit Box, you will now see the Access Token generated with new permissions.
+
 
 
 How to use the script:
