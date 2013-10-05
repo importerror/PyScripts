@@ -1,20 +1,23 @@
+
 import requests
 import json
 import sys
 
-"""
+'''
     To get the access token goto http://graph.facebook.com/tools/explorer
-    With "Get Access Token" option select "user_group" and "Friend_group" in "User Data Permissions" and "Friends Data Permissions"
-"""
+
+'''
+
 TOKEN = '<access token>'
 
-# Collects all group names and group id from the user which he belongs to
+# Collects data and send it to the respective function
+
+Group_post = "SELECT gid,name FROM group where gid in ( SELECT gid FROM group_member WHERE uid=me())"
 
 
-def get_groups():
+def get_data(fql):
 
-    query = (
-        "SELECT gid,name FROM group where gid in ( SELECT gid FROM group_member WHERE uid=me())")
+    query = (fql)
     payload = {'q': query, 'access_token': TOKEN}
     response = requests.get('https://graph.facebook.com/fql', params=payload)
     result = json.loads(response.text)
@@ -31,7 +34,7 @@ def post_status(name):
             check = raw_input(prompt.encode(sys.stdout.encoding))
         except UnicodeError:
             continue
-        if ((check == 'N') | (check == 'n')):
+        if (check == 'N') | (check == 'n'):
             continue
         post_data = {'access_token': TOKEN, 'message': message}
         url = 'https://graph.facebook.com/%s/feed' % str(i['gid'])
@@ -39,6 +42,8 @@ def post_status(name):
         print "Successfully posted in %s" % i['name']
 
 if __name__ == '__main__':
-    Post_status(get_groups())
+    action = raw_input("Menu\n1.Group Post\n\nEnter Your Choice: ")
+    if action == '1':
+        post_status(get_data(Group_post))
 
-# To run the script "python group_post.py"
+# To run the script "python gFbScript.py"
