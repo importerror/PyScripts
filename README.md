@@ -7,7 +7,7 @@ We use Graph API provided by Facebook for the same. To use the Graph API, it is 
 * * *
 Steps to use the Access Token in the script:
 
-1) Go to the following page, https://developers.facebook.com/tools/explorer/
+1) Go to [Graph API Explorer](https://developers.facebook.com/tools/explorer/)
 
 2) Login with your regular Facebook ID.
 
