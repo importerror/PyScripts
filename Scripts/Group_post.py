@@ -39,6 +39,6 @@ def post_status(name):
         print "Successfully posted in %s" % i['name']
 
 if __name__ == '__main__':
-    Post_status(get_groups())
+    post_status(get_groups())
 
 # To run the script "python group_post.py"
