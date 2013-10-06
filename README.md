@@ -28,7 +28,7 @@ Will try to make a Script which can be used to do most of the facebook actions u
 Few operations which can be planned to do from this script are like Multiple group post, 
 Downloading Profile pics of friends etc.
 
-Operations what are to be implemented will be put up in Todo.txt
+Operations what are to be implemented will be put up in [Todo](https://github.com/sant0sh/Facebook-Scripts/blob/master/Todo.md)
 
 
 ##Contributions
