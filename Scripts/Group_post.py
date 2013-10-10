@@ -12,9 +12,9 @@ TOKEN = '<access token>'
 
 
 def get_groups():
-
     query = (
-        "SELECT gid,name FROM group where gid in ( SELECT gid FROM group_member WHERE uid=me())")
+        "SELECT gid,name FROM group where gid in ( SELECT gid FROM group_member WHERE uid=me())"
+            )
     payload = {'q': query, 'access_token': TOKEN}
     response = requests.get('https://graph.facebook.com/fql', params=payload)
     result = json.loads(response.text)
@@ -39,6 +39,6 @@ def post_status(name):
         print "Successfully posted in %s" % i['name']
 
 if __name__ == '__main__':
-    Post_status(get_groups())
+    post_status(get_groups())
 
 # To run the script "python group_post.py"
