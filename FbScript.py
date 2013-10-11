@@ -1,11 +1,9 @@
-
 import requests
 import json
 import sys
 
 '''
     To get the access token goto http://graph.facebook.com/tools/explorer
-
 '''
 
 TOKEN = '<access token>'
@@ -13,7 +11,7 @@ TOKEN = '<access token>'
 # Collects data and send it to the respective function
 
 Group_post = "SELECT gid,name FROM group where gid in ( SELECT gid FROM group_member WHERE uid=me())"
-
+pic='SELECT first_name,sex,pic_big FROM user WHERE uid in (SELECT uid2 FROM friend WHERE uid1 = me())'
 
 def get_data(fql):
 
