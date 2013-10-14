@@ -23,7 +23,7 @@ Steps to use the Access Token in the script:
 
 ***
 ###Objective
-Will try to make a Script which can be used to do most of the facebook actions using graph API.
+To make a script which can be used to do most of the facebook actions using graph API.
 
 Few operations which can be planned to do from this script are like Multiple group post, 
 Downloading Profile pics of friends etc.
