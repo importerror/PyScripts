@@ -3,7 +3,7 @@ import re
 import requests
 import json
 
-TOKEN="CAACEdEose0cBAICZBZBVSznbEXsZBtlTwOVLem0tCw24kZB4sXZCCwtCc98jB6sFZCUZBVq82PqSTWvymLhpjupVEfZB5npyWoGZBnIG5Md9gcd23WeH0YaPkOPQi3bYUA7wmnxaFxoZAe1zVqWowWibme35GQCVCpRdJ1w6CHAvJivOM1SY9SpLqQ7gRGSAuLugNbH93dnfq9MQZDZD"
+TOKEN="<access Token>"
 movie_data=requests.get('https://graph.facebook.com/100000305682125?fields=id,name,movies&access_token='+TOKEN)
 result = json.loads(movie_data.text)
 
